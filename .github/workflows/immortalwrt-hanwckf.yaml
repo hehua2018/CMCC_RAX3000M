@@ -4,7 +4,8 @@ name: 编译hanwckf的immortalwrt固件
 on:
   repository_dispatch:
   workflow_dispatch:
-
+  schedule:
+    - cron: "0 0 * * 1"
 env:
   TZ: Asia/Shanghai
   MY_WORKSPACE: /home/runner
@@ -12,6 +13,7 @@ env:
   REPOSITORY_CID: .
   REPOSITORY_DIR: /home/runner/immortalwrt
   FIRMWARE_DIR: /home/runner/immortalwrt/bin/targets/mediatek/mt7981
+
 
 jobs:
   CompileFirmware:
